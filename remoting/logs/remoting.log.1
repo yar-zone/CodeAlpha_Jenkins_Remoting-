@@ -1,54 +1,359 @@
-May 26, 2026 4:10:54 PM hudson.remoting.Launcher createEngine
+May 26, 2026 4:11:21 PM hudson.remoting.Launcher createEngine
 INFO: Setting up agent: remote-agent-1
-May 26, 2026 4:10:54 PM hudson.remoting.Engine startEngine
+May 26, 2026 4:11:21 PM hudson.remoting.Engine startEngine
 INFO: Using Remoting version: 3355.v388858a_47b_33
-May 26, 2026 4:10:54 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+May 26, 2026 4:11:21 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
 INFO: Using C:\Users\Informatics\Downloads\VS Codes\Project1\CodeAlpha_Jenkins_Remoting\remoting as a remoting work directory
-May 26, 2026 4:10:54 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:21 PM hudson.remoting.Launcher$CuiListener status
 INFO: Locating server among [http://localhost:8080/]
-May 26, 2026 4:10:54 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+May 26, 2026 4:11:21 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
 INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
-May 26, 2026 4:10:54 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:21 PM hudson.remoting.Launcher$CuiListener status
 INFO: Agent discovery successful
   Agent address: localhost
   Agent port:    50000
   Identity:      68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
-May 26, 2026 4:10:54 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:21 PM hudson.remoting.Launcher$CuiListener status
 INFO: Handshaking
-May 26, 2026 4:10:54 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:21 PM hudson.remoting.Launcher$CuiListener status
 INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
-May 26, 2026 4:10:54 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:21 PM hudson.remoting.Launcher$CuiListener status
 INFO: Trying protocol: JNLP4-connect
-May 26, 2026 4:10:54 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:21 PM hudson.remoting.Launcher$CuiListener status
 INFO: Connecting to localhost:50000
-May 26, 2026 4:10:54 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+May 26, 2026 4:11:21 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
 INFO: Waiting for ProtocolStack to start.
-May 26, 2026 4:10:54 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:21 PM hudson.remoting.Launcher$CuiListener status
 INFO: Remote identity confirmed: 68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
-May 26, 2026 4:10:54 PM hudson.remoting.Launcher$CuiListener status
-INFO: Connected
-May 26, 2026 4:11:02 PM hudson.remoting.Launcher$CuiListener status
-INFO: Terminated
-May 26, 2026 4:11:12 PM hudson.remoting.Launcher$CuiListener status
-INFO: Performing onReconnect operation.
-May 26, 2026 4:11:12 PM hudson.remoting.Launcher$CuiListener status
-INFO: onReconnect operation completed.
-May 26, 2026 4:11:12 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:21 PM org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer onRecv
+INFO: [JNLP4-connect connection to localhost/127.0.0.1:50000] Local headers refused by remote: Unknown client name: remote-agent-1
+May 26, 2026 4:11:21 PM hudson.remoting.Launcher$CuiListener status
+INFO: Protocol JNLP4-connect encountered an unexpected exception
+java.util.concurrent.ExecutionException: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.util.SettableFuture.get(SettableFuture.java:222)
+	at hudson.remoting.Engine.innerRun(Engine.java:1065)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+Caused by: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.newAbortCause(ConnectionHeadersFilterLayer.java:396)
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.onRecvClosed(ConnectionHeadersFilterLayer.java:451)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.FilterLayer.onRecvClosed(FilterLayer.java:289)
+	at org.jenkinsci.remoting.protocol.impl.SSLEngineFilterLayer.onRecvClosed(SSLEngineFilterLayer.java:167)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.NetworkLayer.onRecvClosed(NetworkLayer.java:155)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer.access$700(BIONetworkLayer.java:50)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader.run(BIONetworkLayer.java:256)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:312)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+	Suppressed: java.nio.channels.ClosedChannelException
+		... 7 more
+
+May 26, 2026 4:11:21 PM hudson.remoting.Launcher$CuiListener status
+INFO: reconnect rejected, sleeping 10s: 
+java.lang.Exception: The server rejected the connection: None of the protocols were accepted
+	at hudson.remoting.Engine.onConnectionRejected(Engine.java:1159)
+	at hudson.remoting.Engine.innerRun(Engine.java:1097)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+
+May 26, 2026 4:11:31 PM hudson.remoting.Launcher$CuiListener status
 INFO: Locating server among [http://localhost:8080/]
-May 26, 2026 4:11:12 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+May 26, 2026 4:11:31 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
 INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
-May 26, 2026 4:11:12 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:31 PM hudson.remoting.Launcher$CuiListener status
 INFO: Agent discovery successful
   Agent address: localhost
   Agent port:    50000
   Identity:      68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
-May 26, 2026 4:11:12 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:31 PM hudson.remoting.Launcher$CuiListener status
 INFO: Handshaking
-May 26, 2026 4:11:12 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:31 PM hudson.remoting.Launcher$CuiListener status
 INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
-May 26, 2026 4:11:12 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:31 PM hudson.remoting.Launcher$CuiListener status
 INFO: Trying protocol: JNLP4-connect
-May 26, 2026 4:11:12 PM hudson.remoting.Launcher$CuiListener status
+May 26, 2026 4:11:31 PM hudson.remoting.Launcher$CuiListener status
 INFO: Connecting to localhost:50000
-May 26, 2026 4:11:12 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+May 26, 2026 4:11:31 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
 INFO: Waiting for ProtocolStack to start.
+May 26, 2026 4:11:31 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:11:31 PM org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer onRecv
+INFO: [JNLP4-connect connection to localhost/127.0.0.1:50000] Local headers refused by remote: Unknown client name: remote-agent-1
+May 26, 2026 4:11:31 PM hudson.remoting.Launcher$CuiListener status
+INFO: Protocol JNLP4-connect encountered an unexpected exception
+java.util.concurrent.ExecutionException: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.util.SettableFuture.get(SettableFuture.java:222)
+	at hudson.remoting.Engine.innerRun(Engine.java:1065)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+Caused by: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.newAbortCause(ConnectionHeadersFilterLayer.java:396)
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.onRecvClosed(ConnectionHeadersFilterLayer.java:451)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.FilterLayer.onRecvClosed(FilterLayer.java:289)
+	at org.jenkinsci.remoting.protocol.impl.SSLEngineFilterLayer.onRecvClosed(SSLEngineFilterLayer.java:167)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.NetworkLayer.onRecvClosed(NetworkLayer.java:155)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer.access$700(BIONetworkLayer.java:50)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader.run(BIONetworkLayer.java:256)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:312)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+	Suppressed: java.nio.channels.ClosedChannelException
+		... 7 more
+
+May 26, 2026 4:11:31 PM hudson.remoting.Launcher$CuiListener status
+INFO: reconnect rejected, sleeping 10s: 
+java.lang.Exception: The server rejected the connection: None of the protocols were accepted
+	at hudson.remoting.Engine.onConnectionRejected(Engine.java:1159)
+	at hudson.remoting.Engine.innerRun(Engine.java:1097)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+
+May 26, 2026 4:11:41 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://localhost:8080/]
+May 26, 2026 4:11:41 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+May 26, 2026 4:11:41 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: localhost
+  Agent port:    50000
+  Identity:      68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:11:41 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+May 26, 2026 4:11:41 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+May 26, 2026 4:11:41 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+May 26, 2026 4:11:41 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to localhost:50000
+May 26, 2026 4:11:41 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+May 26, 2026 4:11:41 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:11:41 PM org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer onRecv
+INFO: [JNLP4-connect connection to localhost/127.0.0.1:50000] Local headers refused by remote: Unknown client name: remote-agent-1
+May 26, 2026 4:11:41 PM hudson.remoting.Launcher$CuiListener status
+INFO: Protocol JNLP4-connect encountered an unexpected exception
+java.util.concurrent.ExecutionException: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.util.SettableFuture.get(SettableFuture.java:222)
+	at hudson.remoting.Engine.innerRun(Engine.java:1065)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+Caused by: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.newAbortCause(ConnectionHeadersFilterLayer.java:396)
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.onRecvClosed(ConnectionHeadersFilterLayer.java:451)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.FilterLayer.onRecvClosed(FilterLayer.java:289)
+	at org.jenkinsci.remoting.protocol.impl.SSLEngineFilterLayer.onRecvClosed(SSLEngineFilterLayer.java:167)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.NetworkLayer.onRecvClosed(NetworkLayer.java:155)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer.access$700(BIONetworkLayer.java:50)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader.run(BIONetworkLayer.java:256)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:312)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+	Suppressed: java.nio.channels.ClosedChannelException
+		... 7 more
+
+May 26, 2026 4:11:41 PM hudson.remoting.Launcher$CuiListener status
+INFO: reconnect rejected, sleeping 10s: 
+java.lang.Exception: The server rejected the connection: None of the protocols were accepted
+	at hudson.remoting.Engine.onConnectionRejected(Engine.java:1159)
+	at hudson.remoting.Engine.innerRun(Engine.java:1097)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+
+May 26, 2026 4:11:51 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://localhost:8080/]
+May 26, 2026 4:11:51 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+May 26, 2026 4:11:51 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: localhost
+  Agent port:    50000
+  Identity:      68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:11:51 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+May 26, 2026 4:11:51 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+May 26, 2026 4:11:51 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+May 26, 2026 4:11:51 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to localhost:50000
+May 26, 2026 4:11:51 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+May 26, 2026 4:11:51 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:11:51 PM org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer onRecv
+INFO: [JNLP4-connect connection to localhost/127.0.0.1:50000] Local headers refused by remote: Unknown client name: remote-agent-1
+May 26, 2026 4:11:51 PM hudson.remoting.Launcher$CuiListener status
+INFO: Protocol JNLP4-connect encountered an unexpected exception
+java.util.concurrent.ExecutionException: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.util.SettableFuture.get(SettableFuture.java:222)
+	at hudson.remoting.Engine.innerRun(Engine.java:1065)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+Caused by: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.newAbortCause(ConnectionHeadersFilterLayer.java:396)
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.onRecvClosed(ConnectionHeadersFilterLayer.java:451)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.FilterLayer.onRecvClosed(FilterLayer.java:289)
+	at org.jenkinsci.remoting.protocol.impl.SSLEngineFilterLayer.onRecvClosed(SSLEngineFilterLayer.java:167)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.NetworkLayer.onRecvClosed(NetworkLayer.java:155)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer.access$700(BIONetworkLayer.java:50)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader.run(BIONetworkLayer.java:256)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:312)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+	Suppressed: java.nio.channels.ClosedChannelException
+		... 7 more
+
+May 26, 2026 4:11:51 PM hudson.remoting.Launcher$CuiListener status
+INFO: reconnect rejected, sleeping 10s: 
+java.lang.Exception: The server rejected the connection: None of the protocols were accepted
+	at hudson.remoting.Engine.onConnectionRejected(Engine.java:1159)
+	at hudson.remoting.Engine.innerRun(Engine.java:1097)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+
+May 26, 2026 4:12:01 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://localhost:8080/]
+May 26, 2026 4:12:01 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+May 26, 2026 4:12:01 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: localhost
+  Agent port:    50000
+  Identity:      68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:12:01 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+May 26, 2026 4:12:01 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+May 26, 2026 4:12:01 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+May 26, 2026 4:12:01 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to localhost:50000
+May 26, 2026 4:12:01 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+May 26, 2026 4:12:01 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:12:01 PM org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer onRecv
+INFO: [JNLP4-connect connection to localhost/127.0.0.1:50000] Local headers refused by remote: Unknown client name: remote-agent-1
+May 26, 2026 4:12:01 PM hudson.remoting.Launcher$CuiListener status
+INFO: Protocol JNLP4-connect encountered an unexpected exception
+java.util.concurrent.ExecutionException: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.util.SettableFuture.get(SettableFuture.java:222)
+	at hudson.remoting.Engine.innerRun(Engine.java:1065)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+Caused by: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.newAbortCause(ConnectionHeadersFilterLayer.java:396)
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.onRecvClosed(ConnectionHeadersFilterLayer.java:451)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.FilterLayer.onRecvClosed(FilterLayer.java:289)
+	at org.jenkinsci.remoting.protocol.impl.SSLEngineFilterLayer.onRecvClosed(SSLEngineFilterLayer.java:167)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.NetworkLayer.onRecvClosed(NetworkLayer.java:155)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer.access$700(BIONetworkLayer.java:50)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader.run(BIONetworkLayer.java:256)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:312)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+	Suppressed: java.nio.channels.ClosedChannelException
+		... 7 more
+
+May 26, 2026 4:12:01 PM hudson.remoting.Launcher$CuiListener status
+INFO: reconnect rejected, sleeping 10s: 
+java.lang.Exception: The server rejected the connection: None of the protocols were accepted
+	at hudson.remoting.Engine.onConnectionRejected(Engine.java:1159)
+	at hudson.remoting.Engine.innerRun(Engine.java:1097)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+
+May 26, 2026 4:12:11 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://localhost:8080/]
+May 26, 2026 4:12:11 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+May 26, 2026 4:12:11 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: localhost
+  Agent port:    50000
+  Identity:      68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:12:11 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+May 26, 2026 4:12:11 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+May 26, 2026 4:12:11 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+May 26, 2026 4:12:11 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to localhost:50000
+May 26, 2026 4:12:11 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+May 26, 2026 4:12:11 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:12:11 PM org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer onRecv
+INFO: [JNLP4-connect connection to localhost/127.0.0.1:50000] Local headers refused by remote: Unknown client name: remote-agent-1
+May 26, 2026 4:12:11 PM hudson.remoting.Launcher$CuiListener status
+INFO: Protocol JNLP4-connect encountered an unexpected exception
+java.util.concurrent.ExecutionException: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.util.SettableFuture.get(SettableFuture.java:222)
+	at hudson.remoting.Engine.innerRun(Engine.java:1065)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+Caused by: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Unknown client name: remote-agent-1
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.newAbortCause(ConnectionHeadersFilterLayer.java:396)
+	at org.jenkinsci.remoting.protocol.impl.ConnectionHeadersFilterLayer.onRecvClosed(ConnectionHeadersFilterLayer.java:451)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.FilterLayer.onRecvClosed(FilterLayer.java:289)
+	at org.jenkinsci.remoting.protocol.impl.SSLEngineFilterLayer.onRecvClosed(SSLEngineFilterLayer.java:167)
+	at org.jenkinsci.remoting.protocol.ProtocolStack$Ptr.onRecvClosed(ProtocolStack.java:826)
+	at org.jenkinsci.remoting.protocol.NetworkLayer.onRecvClosed(NetworkLayer.java:155)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer.access$700(BIONetworkLayer.java:50)
+	at org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader.run(BIONetworkLayer.java:256)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:312)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+	Suppressed: java.nio.channels.ClosedChannelException
+		... 7 more
+
+May 26, 2026 4:12:11 PM hudson.remoting.Launcher$CuiListener status
+INFO: reconnect rejected, sleeping 10s: 
+java.lang.Exception: The server rejected the connection: None of the protocols were accepted
+	at hudson.remoting.Engine.onConnectionRejected(Engine.java:1159)
+	at hudson.remoting.Engine.innerRun(Engine.java:1097)
+	at hudson.remoting.Engine.runTcp(Engine.java:621)
+	at hudson.remoting.Engine.run(Engine.java:562)
+
+May 26, 2026 4:12:21 PM hudson.remoting.Launcher$CuiListener status
+INFO: Locating server among [http://localhost:8080/]
+May 26, 2026 4:12:21 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+May 26, 2026 4:12:21 PM hudson.remoting.Launcher$CuiListener status
+INFO: Agent discovery successful
+  Agent address: localhost
+  Agent port:    50000
+  Identity:      68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:12:21 PM hudson.remoting.Launcher$CuiListener status
+INFO: Handshaking
+May 26, 2026 4:12:21 PM hudson.remoting.Launcher$CuiListener status
+INFO: Server reports protocol JNLP4-connect-proxy not supported, skipping
+May 26, 2026 4:12:21 PM hudson.remoting.Launcher$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+May 26, 2026 4:12:21 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connecting to localhost:50000
+May 26, 2026 4:12:21 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+May 26, 2026 4:12:21 PM hudson.remoting.Launcher$CuiListener status
+INFO: Remote identity confirmed: 68:db:b1:68:a3:b9:f3:76:2f:61:21:a3:5d:76:63:39
+May 26, 2026 4:12:21 PM hudson.remoting.Launcher$CuiListener status
+INFO: Connected
