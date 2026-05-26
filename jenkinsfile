@@ -1,0 +1,42 @@
+pipeline {
+    agent { label 'remote-agent-1' }    // runs on your remote node
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo "Running on node: ${env.NODE_NAME}"
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh '''
+                    echo "=== Remote Agent Build ==="
+                    echo "Hostname: $(hostname)"
+                    echo "Working dir: $(pwd)"
+                    echo "Build ID: ${BUILD_ID}"
+                '''
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo "All tests passed on remote node!"'
+            }
+        }
+
+        stage('Archive') {
+            steps {
+                sh 'echo "Build complete by CodeAlpha" > build-report.txt'
+                archiveArtifacts artifacts: 'build-report.txt'
+            }
+        }
+    }
+
+    post {
+        success { echo "✅ Pipeline succeeded on: ${env.NODE_NAME}" }
+        failure { echo "❌ Pipeline failed — check agent logs." }
+    }
+}

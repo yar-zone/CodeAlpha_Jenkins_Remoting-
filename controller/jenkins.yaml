@@ -1,0 +1,28 @@
+jenkins:
+  systemMessage: "Jenkins Controller - Configured via JCasC"
+
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin"
+
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+
+  remotingSecurity:
+    enabled: true
+
+  nodes:
+    - permanent:
+        name: "remote-agent-1"
+        labelString: "remote-agent-1"        # ← label for Jenkinsfile routing
+        remoteFS: "/home/jenkins/agent"
+        numExecutors: 1
+        launcher:
+          inbound:                            # ← correct key (replaces old "jnlp")
+            workDirSettings:
+              disabled: false
+              workDirPath: "/home/jenkins/agent"
