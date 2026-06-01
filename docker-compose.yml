@@ -10,7 +10,6 @@ services:
       - "50000:50000" # Agent remoting port
     volumes:
       - jenkins-data:/var/jenkins_home
-      - ./casc:/var/jenkins_home/casc
     networks:
       - jenkins-net
     healthcheck:
@@ -31,14 +30,17 @@ services:
         condition: service_healthy
     environment:
       - JENKINS_URL=http://jenkins-controller:8080
-      - JENKINS_AGENT_NAME=remote-agent
+      - JENKINS_AGENT_NAME=remote-agent-1
       - JENKINS_SECRET=${JENKINS_AGENT_SECRET:-}
       - JENKINS_AGENT_WORKDIR=/home/jenkins/agent
+    volumes:
+      - agent-data:/home/jenkins/agent
     networks:
       - jenkins-net
 
 volumes:
   jenkins-data:
+  agent-data:
 
 networks:
   jenkins-net:
